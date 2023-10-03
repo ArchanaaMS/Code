@@ -1,0 +1,84 @@
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Collections.Generic;
+using HtmlAgilityPack;
+
+{
+    class Program
+    {
+   public static void Main(string[] args)
+        {
+            var process = new ProcessStartInfo("chrome.exe");
+            process.Arguments = "https://www.moneycorp.com/en-gb/";
+            Process.Start(process);
+        }
+
+public static string language(string baseUri, string uri2)
+{
+Uri baseUri = new Uri("https://www.moneycorp.com/");
+Uri uri2 = new Uri(baseUri, "en-US/");
+}
+
+public void Foreignexchangesolutions(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            WebBrowser browser = sender as WebBrowser;
+            var links = browser.Document.GetElementsByTagName("a");
+
+                foreach (HtmlElement link in links)
+                {
+                    if (link.GetAttribute("name") == "Foreign exchange solutions")
+                    {
+                        link.Show("Find out more");
+                        link.InvokeMember("click");
+                    }
+                    var webGet = new HtmlWeb();
+var Document = webGet.Load(url);    
+var title = Document.DocumentNode.SelectSingleNode("/foreign exchange").InnerText;
+{
+return(title);
+}
+}
+public static SearchResult SearchText(string baseUri, string searchTerm)
+{
+baseUri = "https://www.moneycorp.com/en-US/search";
+searchTerm = "international payments";
+ bool wordFound = websiteContent.Contains(searchTerm);
+
+                if (wordFound)
+                {
+                    Console.WriteLine("The word '{searchTerm}' was found on the website.");
+                }
+                else
+                {
+                    Console.WriteLine("The word '{searchTerm}' was not found on the website.");
+                }
+            }
+public static ValidateLink(string baseUri, string linkPrefix)
+{
+baseUri = "https://www.moneycorp.com/en-US/";
+linkPrefix = "https://";
+HtmlWeb htmlWeb = new HtmlWeb();
+try
+        {
+            HtmlDocument htmlDoc = htmlWeb.Load(baseUri);
+             HtmlNodeCollection anchorTags = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
+             foreach (HtmlNode anchorTag in anchorTags)
+            {
+                string href = anchorTag.GetAttributeValue("href", "");
+
+                if (href.StartsWith(linkPrefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Valid Link: {href}");
+                }
+            }
+             Console.WriteLine("Link is Valid");
+        }
+        else
+        {
+        Console.WriteLine("Invalid Link");
+         Console.ReadLine();
+    }
+}
+    }
+    
